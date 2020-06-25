@@ -1,0 +1,19 @@
+#include <iostream>
+#include<cstring>
+#include <iomanip>
+using namespace std;
+int main()
+{
+    int cost,cash,bananna;
+    int sum=0;
+    cin>>cost>>cash>>bananna;
+    for(int i=1;i<=bananna;i++){
+        sum=sum+(i*cost);
+    }
+    if(sum>cash)
+        cout<<sum-cash<<endl;
+    else
+        cout<<"0"<<endl;
+ 
+    return 0;
+}
