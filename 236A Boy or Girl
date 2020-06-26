@@ -1,0 +1,23 @@
+#include <iostream>
+#include<cstring>
+#include<algorithm>
+using namespace std;
+int main()
+{
+    string userName;
+    cin>>userName;     //number of distinct characters being odd
+    int count=0;       //sevenkplus
+    int length=userName.length();
+    sort(userName.begin(),userName.end());
+    for(int i=0;i<length;i++){
+        if(userName[i]!=userName[i+1]){
+            count++;
+        }
+    }
+    if(count%2==1)
+        cout<<"IGNORE HIM!"<<endl;
+    else
+        cout<<"CHAT WITH HER!"<<endl;
+    return 0;
+}
+ 
