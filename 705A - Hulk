@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num;
+    cin>>num;
+    for(int i=1;i<num;i++){
+        if(i%2==0)
+            cout<<"I love that"<<" ";
+        else
+            cout<<"I hate that"<<" ";
+    }
+    if(num%2==0)
+        cout<<"I love it"<<endl;
+    if(num%2!=0)
+        cout<<"I hate it"<<endl;
+    return 0;
+}
