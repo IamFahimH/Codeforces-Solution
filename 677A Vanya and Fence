@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int num,height,width=0;
+    cin>>num>>height;
+    const int index=num;
+    int box[index];
+    for(int i=0;i<num;i++){
+        cin>>box[i];
+        if(box[i]>height){
+            width=width+2;
+        }
+        else{
+            width=width+1;
+        }
+    }
+    cout<<width<<endl;
+    return 0;
+}
