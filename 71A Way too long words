@@ -1,0 +1,22 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+    char word[10000];
+    int num;
+    cin>>num;
+    while(num--){
+        cin>>word;
+    int len=strlen(word);
+    int count=0;
+    for(int i=1;i<len-1;i++)
+        count++;
+    if(len>10)
+        cout<<word[0]<<count<<word[len-1]<<endl;
+    else
+        cout<<word<<endl;
+ 
+    }
+    return 0;
+}
