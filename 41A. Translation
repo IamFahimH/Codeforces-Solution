@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+#include <cstring>
+using namespace std;
+int main(){
+    char word[105],new_word[105];
+    int count=0,i,j;
+    cin>>word>>new_word;
+    for(i=0,j=strlen(new_word)-1;i<strlen(word),j>=0;i++,j--){
+            if(word[i]==new_word[j]){
+                count++;
+            }
+        }
+    if(count==strlen(word)){
+        cout<<"YES"<<endl;
+    }
+    else{
+        cout<<"NO"<<endl;
+    }
+    return 0;
+}
