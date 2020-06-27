@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <cctype>
+using namespace std;
+int main(){
+    string word="hello", new_word;
+    cin>>new_word;
+    int k=0,count=0;
+    for(int i=0;i<new_word.length();i++){
+        if(new_word[i]==word[k]){
+            k++;
+            count++;
+        }
+    }
+    if(count==5)
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+    return 0;
+}
