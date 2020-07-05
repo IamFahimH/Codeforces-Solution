@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main() {
+    long long int m,n,a;
+    cin>>m>>n>>a;
+
+    long long int v,h;
+    if(m%a==0)v=m/a;
+    else v=(m/a)+1;
+
+    if(n%a==0)h=n/a;
+    else h=(n/a)+1;
+
+    cout<<v*h<<endl;
+    return 0;
+}
