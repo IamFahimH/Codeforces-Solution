@@ -1,0 +1,27 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+vector <int> vec;
+int main(){
+    int num,input;
+    cin>>num;
+    for(int i=0;i<num;i++){
+        cin>>input;
+        vec.push_back(input);
+    }
+    int count,max=0;
+    for(int i=0;i<num;i++){
+        count=1;
+        for(int j=i+1;j<num;j++){
+            if(vec[i]<=vec[j]){
+                count++;
+                i++;
+            }
+            else break;
+        }
+        if(count>max)max=count;
+    }
+    cout<<max<<endl;
+    return 0;
+}
