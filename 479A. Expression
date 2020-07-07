@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main(){
+    int vec[5];
+    int a,b,c;
+    cin>>a>>b>>c;
+    vec[0]=a*b+c;
+    vec[1]=a+b*c;
+    vec[2]=a*(b+c);
+    vec[3]=(a+b)*c;
+    vec[4]=a+b+c;
+    vec[5]=a*b*c;
+
+    sort(vec,vec+6);
+    cout<<vec[5]<<endl;
+    return 0;
+}
