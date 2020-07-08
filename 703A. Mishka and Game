@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int num,m,c,m_sum=0,c_sum=0;
+    cin>>num;
+    while(num--){
+        cin>>m>>c;
+        if(m>c)m_sum++;
+        if(c>m)c_sum++;
+    }
+    if(m_sum>c_sum)cout<<"Mishka"<<endl;
+    else if(c_sum>m_sum)cout<<"Chris"<<endl;
+    else if(m_sum==c_sum)cout<<"Friendship is magic!^^"<<endl;
+    return 0;
+}
