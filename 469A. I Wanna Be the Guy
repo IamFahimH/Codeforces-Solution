@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+bool levels[1000];
+int main(){
+    int n; cin>>n;
+
+
+    int pX; cin>>pX;
+    for(int i=1;i<=pX;i++){
+        int in; cin>>in;
+        levels[in]=1;
+    }
+
+    int pY; cin>>pY;
+    for(int i=1;i<=pY;i++){
+        int in; cin>>in;
+        levels[in]=1;
+    }
+
+    int count=0;
+    for(int i=1;i<=n;i++){
+        if(levels[i]==1){
+            count++;
+        }
+    }
+
+    if(count==n)cout<<"I become the guy."<<endl;
+    else cout<<"Oh, my keyboard!"<<endl;
+    return 0;
+}
