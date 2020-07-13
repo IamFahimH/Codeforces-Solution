@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int red_sock,blue_sock;
+    cin>>red_sock>>blue_sock;
+
+    int sf=min(red_sock,blue_sock);
+    int rem=max(red_sock,blue_sock)-sf;
+
+    if(rem%2==1)rem-=1;
+    rem/=2;
+    
+    cout<<sf<<" "<<rem<<endl;
+    return 0;
+}
