@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define INF 1000000000
+using namespace std;
+int box[5000];
+int main()
+{
+    int num,x; cin>>num>>x;
+    int a,b,ans=INF;
+
+    for(int i=0;i<num;i++)
+    {
+        cin>>a>>b;
+        if(a>b)swap(a,b);
+        //cout<<"a = "<<a<<" b = "<<b<<endl;
+        for(int j=a;j<=b;j++)
+        {
+            box[j]++;
+            if(box[j]==num){
+                //cout<<box[j]<<endl;
+                if(abs(j-x)<ans){
+                ans=abs(j-x);
+                }
+            }
+        }
+    }
+    if(ans==INF)ans=-1;
+    cout<<ans<<endl;
+    return 0;
+}
