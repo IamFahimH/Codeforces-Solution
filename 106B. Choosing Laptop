@@ -1,0 +1,22 @@
+#include <iostream>
+#include <algorithm>
+#define INF 10000000000000
+using namespace std;
+int main()
+{
+    int n; cin>>n;
+    int speed[110],ram[110],hdd[110],cost[110];
+
+    for(int i=1;i<=n;i++)
+        cin>>speed[i]>>ram[i]>>hdd[i]>>cost[i];
+
+    for(int i=1;i<=n;i++){
+        for(int j=1;j<=n;j++){
+            if(speed[i]<speed[j] && ram[i]<ram[j] && hdd[i]<hdd[j]){
+                cost[i]=INF;
+            }
+        }
+    }
+    cout<<(min_element(cost+1,cost+1+n)-cost)<<endl;
+    return 0;
+}
