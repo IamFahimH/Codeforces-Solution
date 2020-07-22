@@ -1,0 +1,17 @@
+#include <algorithm>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string word1,word2,word3;
+    cin>>word1>>word2>>word3;
+    string strr=word1+word2;
+
+    sort(strr.begin(),strr.end());
+    sort(word3.begin(),word3.end());
+
+    if(strr==word3)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+    return 0;
+}
