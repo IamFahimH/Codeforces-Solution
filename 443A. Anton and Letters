@@ -1,0 +1,19 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+int main(){
+    string letters; getline(cin,letters);
+    int len=letters.length();
+    sort(letters.begin(),letters.end());
+    int count=0;
+
+    for(int i=0;i<len;i++){
+        if(letters[i]>96 && letters[i]<123){
+            count++;
+            if(letters[i]==letters[i+1])count--;
+        }
+    }
+    cout<<count<<endl;
+    return 0;
+}
