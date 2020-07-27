@@ -1,0 +1,20 @@
+#include <iostream>
+typedef long long int integer;
+using namespace std;
+int main(){
+    integer n,m; cin>>n>>m;
+    integer init=1;
+    integer time=0;
+    for(integer i=0;i<m;i++){
+        integer in; cin>>in;
+        if(in>=init){
+            time+= (in-init);
+        }
+        else{
+            time += (n-(init-in));
+        }
+        init=in;
+    }
+    cout<<time<<endl;
+    return 0;
+}
