@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int ein=2,oin=1;
+int main(){
+    int looper; cin>>looper;
+    while(looper--){
+        int num; cin>>num;
+        if(num%4!=0)cout<<"NO"<<endl;
+        else{
+            cout<<"YES"<<endl;
+           vector <integer> vec;
+            for(int i=0;i<num/2;i++){
+                vec.push_back(ein);
+                ein+=2;
+            }
+            for(int i=0;i<num/2;i++){
+                vec.push_back(oin);
+                oin+=2;
+            }
+            for(int i=0;i<num-1;i++){
+                cout<<vec[i]<<" ";
+            }
+            cout<<vec[num-1]+num/2<<endl;
+        }
+        }
+    return 0;
+}
