@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int a,b; cin>>a>>b;
+    int newCan=a;
+
+    int newC,rem;
+    while(a>=b){
+        newC=a/b;
+        newCan+=newC;
+        rem=a%b;
+        a=newC+rem;
+    }
+    cout<<newCan<<endl;
+    return 0;
+}
