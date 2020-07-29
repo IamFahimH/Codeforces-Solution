@@ -1,0 +1,13 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n,m; cin>>n>>m;
+    int new_socks=n;
+    while(true){
+        new_socks += n/m;
+        n = (n/m)+(n%m);
+        if(n<m)break;
+    }
+    cout<<new_socks<<endl;
+    return 0;
+}
