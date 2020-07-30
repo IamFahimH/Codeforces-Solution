@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int n; cin>>n;
+    int sum=0;
+    for(int i=1;i<=n;i++){
+        char polyhedron[20];
+        cin>>polyhedron;
+
+        if(polyhedron[0]=='T')sum+=4;
+        if(polyhedron[0]=='C')sum+=6;
+        if(polyhedron[0]=='O')sum+=8;
+        if(polyhedron[0]=='D')sum+=12;
+        if(polyhedron[0]=='I')sum+=20;
+
+    }
+    cout<<sum<<endl;
+    return 0;
+}
