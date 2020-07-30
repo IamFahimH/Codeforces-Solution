@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <vector>
+typedef long long int ll;
+using namespace std;
+int main(){
+    ll t; cin>>t;
+    while(t--){
+        ll num; cin>>num;
+        ll x=1;
+        vector <ll> vec;
+        while(num){
+            x *= 10;
+            ll rem=num%x;
+            if(rem)vec.push_back(rem);
+            num -= rem;
+        }
+        cout<<vec.size()<<endl;;
+        for(int i=0;i<vec.size();i++){
+            cout<<vec[i]<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
