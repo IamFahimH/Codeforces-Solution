@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+    int t; cin>>t;
+    while(t--){
+        int num; cin>>num;
+        vector <int> aths;
+        vector <int> diff;
+        for(int i=0;i<num;i++){
+            int in; cin>>in;
+            aths.push_back(in);
+        }
+        sort(aths.begin(),aths.end());
+        for(int i=1;i<num;i++){
+            diff.push_back(aths[i]-aths[i-1]);
+        }
+        sort(diff.begin(),diff.end());
+        cout<<diff[0]<<endl;
+    }
+    return 0;
+}
