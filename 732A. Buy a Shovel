@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main(){
+    int k,r; cin>>k>>r;
+    int i=0,temp=0;
+    while(true){
+        i++;
+        temp = k*i;
+        if(temp%10==r || temp%10==0){
+            break;
+        }
+    }
+    cout<<i<<endl;
+    return 0;
+}
