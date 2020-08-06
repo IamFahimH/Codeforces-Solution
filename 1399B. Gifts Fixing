@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+    int t; cin>>t;
+    while(t--){
+        int num; cin>>num;
+        vector <int> candies(num),oranges(num);
+
+        for(auto &it : candies)cin>>it;
+        for(auto &it : oranges)cin>>it;
+
+        //sort(candies.begin(),candies.end());
+        //sort(oranges.begin(),oranges.end());
+
+        int minCandy=*min_element(candies.begin(),candies.end());
+        int minOrange=*min_element(oranges.begin(),oranges.end());
+        long long int moves=0;
+
+        for(int i=0;i<num;++i){
+            moves += max(candies[i]-minCandy,oranges[i]-minOrange);
+        }
+        cout<<moves<<endl;
+    }
+    return 0;
+}
