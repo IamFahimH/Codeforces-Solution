@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+    int t; cin>>t;
+    while(t--){
+		vector <int> coins(3);
+		for(auto &it:coins)cin>>it;
+		sort(coins.begin(),coins.end());
+		int num; cin>>num;
+
+		int fDiff=coins[2]-coins[0];
+		int sDiff=coins[2]-coins[1];
+		int rem=num-(fDiff+sDiff);
+		if(rem<0 || rem%3!=0)cout<<"NO"<<endl;
+		else cout<<"YES"<<endl;
+	}
+    return 0;
+}
