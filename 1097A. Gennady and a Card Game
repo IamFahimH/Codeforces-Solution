@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+typedef long long int ll;
+using namespace std;
+int main(){
+    string onTable;
+    cin>>onTable;
+    int t=5,count=0;
+    while(t--){
+        string inHand;cin>>inHand;
+        if(onTable[0]==inHand[0] ||
+           onTable[1]==inHand[1]){
+            count++;
+           }
+    }
+    if(count>0)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+    return 0;
+}
