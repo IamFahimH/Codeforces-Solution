@@ -1,0 +1,31 @@
+/* https://codeforces.com/problemset/problem/630/A
+This is actually a funny problem. I wrote code to get 
+the whole number and extract last two digits. 
+When printing just 25 would work fine! -_- */
+
+#include <iostream>
+using namespace std;
+int solve(int power){
+    int ans=1,base=5;
+    while(power){
+        if(power%2){
+           ans*=base;
+            power--;
+        }
+        else{
+            base*=base;
+            power/=2;
+        }
+
+
+    }
+}
+int main(){
+    int power; cin>>power;
+    int ans=solve(power);
+    int last=ans%10;
+    int secondLast=(ans/10)%10;
+    //cout<<secondLast<<last<<endl;
+    cout<<25<<endl; //printing this line along with input
+    return 0;       // will get you AC
+}
