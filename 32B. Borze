@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main(){
+    string borze; cin>>borze;
+    int len=borze.length();
+    for(int i=0;i<len;i++){
+        if(borze[i]=='.'){
+            cout<<0; continue;
+        }
+        if(borze[i]=='-' && borze[i+1]=='.'){
+            cout<<1; i++;continue;
+        }
+        if(borze[i]=='-' && borze[i+1]=='-'){
+            cout<<2; i++;continue;
+        }
+    }
+    cout<<endl;
+    return 0;
+}
