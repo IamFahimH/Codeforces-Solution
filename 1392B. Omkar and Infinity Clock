@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+typedef long long int ll;
+using namespace std;
+int main(){
+    ll t; cin>>t;
+    while(t--){
+        ll num,k; cin>>num>>k;
+        vector <ll> contents(num);
+        for(auto &it:contents)cin>>it;
+        if(k>1)k=2+k%2;
+        while(k--){
+            //sort(contents.begin(),contents.end());
+            ll largest=-1000000000;
+            for(int i=0;i<num;i++){
+                largest=max(largest,contents[i]);
+            }
+            for(int i=0;i<num;i++){
+                contents[i]=largest-contents[i];
+            }
+        }
+        for(int i=0;i<num;i++){
+                cout<<contents[i]<<(i+1==num?'\n':' ');
+            }
+    }
+    return 0;
+}
