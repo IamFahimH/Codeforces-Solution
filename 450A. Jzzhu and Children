@@ -6,7 +6,7 @@ int main(){
     int n,m; cin>>n>>m;
     double holder=0,pos=0;
     for(int i=1;i<=n;i++){
-        int kid; cin>>kid;
+        double kid; cin>>kid;
         if(ceil(kid/m)>=holder){
             holder = ceil(kid/m);
             pos=i;
