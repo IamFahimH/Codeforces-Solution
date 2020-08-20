@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    int pages; cin>>pages;
+    vector <int> readAbility(7);
+    for(auto &in : readAbility)cin>>in;
+
+    int i=0, pagesRead=0;
+    while(true){
+        pagesRead += readAbility[i];
+        if(pagesRead >= pages)break;
+        i++;
+        if(i>6)i=0;
+    }
+    cout<<i+1<<endl;
+    return 0;
+}
