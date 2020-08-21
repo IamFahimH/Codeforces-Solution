@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    int num; cin>>num;
+    vector <int> heights(num);
+    for(auto &input : heights)cin>>input;
+ 
+    int diff = abs(heights[0] - heights[num-1]);
+    int pos1,pos2;
+ 
+    for(int i=0; i<num-1; i++){
+        if(abs(heights[i] - heights[i+1]) < diff){
+            diff = abs(heights[i] - heights[i+1]);
+            pos1 = i; pos2 = i+1;
+        }
+    }
+    //cout<<diff<<endl;
+    if(diff == abs(heights[0] - heights[num-1])){cout<<1<<" "<<num<<endl;}
+    else {cout<<pos1+1<<" "<<pos2+1<<endl;}
+ 
+    return 0;
+}
