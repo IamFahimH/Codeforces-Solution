@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    int num; cin>>num;
+    int five=0,zero=0;
+    for(int i=0; i<num; i++){
+        int input; cin>>input;
+        if(input == 5)five++;
+        if(input == 0)zero++;
+    }
+
+    if(zero == 0){cout<<-1<<endl; return 0;}
+    if(five < 9){cout<<0<<endl; return 0;}
+    else{
+        five -= (five%9);
+        for(int i=0; i<five; i++)
+            cout<<5;
+        for(int i=0; i<zero; i++)
+            cout<<0;
+    }
+    cout<<endl;
+    return 0;
+}
