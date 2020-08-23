@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main(){
+    int num; cin>>num;
+    vector <int> indices(num);
+
+    for(auto &input : indices)cin>>input;
+    sort(indices.begin(),indices.end());
+
+    cout<<(indices[num-1]-indices[0])+1-num<<endl;
+    return 0;
+}
