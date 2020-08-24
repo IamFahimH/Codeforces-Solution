@@ -1,0 +1,16 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+bool isFibo[1001];
+int main(){
+    int n,k; cin>>n>>k;
+    int solved=0, timeSpent=0;
+
+    for(int i=1; i<=n; ++i){
+        timeSpent += (i*5);
+        if((240-timeSpent) >= k)solved++;
+        else break;
+    }
+    cout<<solved<<endl;
+    return 0;
+}
