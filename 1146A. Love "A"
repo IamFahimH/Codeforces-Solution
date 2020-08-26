@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define FastAsRocket ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+typedef long long int ll;
+using namespace std;
+
+int main(){
+    FastAsRocket;
+    string aString; cin>>aString;
+    int cnt = 0;
+    for(int i=0;i<aString.size();i++){
+        if(aString[i]=='a'){
+            cnt++;
+        }
+    }
+    if(cnt > aString.size()/2){cout<<aString.size()<<endl;}
+    else cout<<(cnt*2)-1<<endl;
+    return 0;
+}
