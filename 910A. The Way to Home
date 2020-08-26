@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define FastAsRocket ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+typedef long long int ll;
+using namespace std;
+
+int main(){
+    FastAsRocket;
+    int n,d; cin>>n>>d;
+    string bnrString; cin>>bnrString;
+
+    int pos = 0, cnt = 0;
+    while(pos < n-1 && cnt <= n){
+        if(bnrString[pos]=='1'){cnt++;pos += d;}
+        else pos--;
+    }
+
+    if(cnt >= n)cout<<-1<<endl;
+    else cout<<cnt<<endl;
+
+    return 0;
+}
