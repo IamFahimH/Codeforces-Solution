@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define FastAsRocket ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+typedef long long int ll;
+using namespace std;
+
+int main(){
+    FastAsRocket;
+    int n; cin>>n;
+    cout <<2*n*n-2*n+1<<endl;
+    return 0;
+}
