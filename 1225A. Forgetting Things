@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define FastAsRocket ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+typedef long long int ll;
+using namespace std;
+
+int main(){
+    FastAsRocket;
+    int da, db; cin>>da>>db;
+    if(da == db){
+        cout<<da<<"1"<<" "<<db<<"2"<< endl;
+        return 0;
+    }
+    if(da == 9 && db == 1){
+        cout<<9<<" "<<10<< endl;
+        return 0;
+    }
+    if(da > db || db-da > 1){
+        cout<<-1<<endl;
+        return 0;
+    }
+    cout<<da<<"9"<<" "<<db<<"0"<< endl;
+    return 0;
+}
