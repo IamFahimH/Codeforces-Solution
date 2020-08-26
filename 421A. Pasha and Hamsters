@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define FastAsRocket ios::sync_with_stdio(false);cin.tie(0);cout.tie(0)
+typedef long long int ll;
+using namespace std;
+
+int main(){
+    FastAsRocket;
+    int n, arthur, alex;
+    cin>>n>>arthur>>alex;
+
+    int box[105];
+    for(int i=1; i<=arthur; i++){
+        int in = 0; cin>>in;
+        box[in] = 1;
+    }
+    for(int i=1; i<=alex; i++){
+        int in = 0; cin>>in;
+        if(box[in] == 1)continue;
+        box[in] = 2;
+    }
+    for(int i=1; i<=n; i++)cout<<box[i]<<" ";
+    cout<<endl;
+    return 0;
+}
