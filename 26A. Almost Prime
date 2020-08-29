@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#define MX 3005
+using namespace std;
+bool isPrime[MX];
+int main(){
+    int div[MX]={0};
+    int num; cin>>num;
+
+    int cnt = 0;
+    for(int i=2; i<=num; i++){
+        if(!isPrime[i]){
+            for(int j=i+i; j<=num; j+=i){
+                isPrime[j] = true;
+                div[j]++;
+            }
+        }
+        if(div[i] == 2)cnt++;
+    }
+    cout<<cnt<<endl;
+    return 0;
+}
