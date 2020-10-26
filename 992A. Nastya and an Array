@@ -1,0 +1,16 @@
+#include <iostream>
+#include <set>
+typedef long long int ll;
+using namespace std;
+int main(){
+    ll num, in; cin>>num;
+    
+    set <int> ints;
+    for(int i=0; i<num; i++){
+        cin>>in;
+        if(in!=0)ints.insert(in);
+    }
+    
+    cout<<ints.size()<<endl;
+    return 0;
+}
