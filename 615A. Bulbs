@@ -1,0 +1,24 @@
+#include <iostream>
+#define MAX 5
+using namespace std;
+bool switches[105];
+int main()
+{
+    int n,m; cin>>n>>m;
+    bool flag=true;
+    for(int i=0; i<n; i++){
+        int xi; cin>>xi;
+        for(int j=1; j<=xi; j++){
+            int bulb; cin>>bulb;
+            switches[bulb]=true;
+        }
+    }
+    for(int i=1; i<=m; i++){
+        if(switches[i]==false){
+            flag=false;
+        }
+    }
+    if(flag)cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+    return 0;
+}
