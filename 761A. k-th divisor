@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#define MAX 32000
+typedef long long int ll;
+using namespace std;
+vector <ll> divs;
+void countDivisor(ll num){
+    int cnt= 0;
+    for(ll i=1; i*i<=num; i++){
+        if(i*i == num){
+            cnt += 1;
+            divs.push_back(i);
+        }
+        else if(num%i == 0){
+            cnt += 2;
+            divs.push_back(i);
+            divs.push_back(num/i);
+        }
+    }
+}
+int main(){
+    ll num, k; cin>>num>>k;
+    countDivisor(num);
+
+    //cout<<"Divs size "<<divs.size()<<endl;
+    sort(divs.begin(),divs.end());
+    if(divs.size()<k)cout<<"-1"<<endl;
+    else cout<<divs[k-1]<<endl;
+    return 0;
+}
