@@ -1,0 +1,16 @@
+//https://codeforces.com/problemset/problem/591/A
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int lengthOfCorridor, p,q;
+        lengthOfCorridor = scanner.nextInt();
+        p = scanner.nextInt();
+        q = scanner.nextInt();
+
+        double ans = (1.0*lengthOfCorridor*p) / (p+q);
+        System.out.println(ans);
+    }
+}
