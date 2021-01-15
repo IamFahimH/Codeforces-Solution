@@ -1,0 +1,31 @@
+package newPackage;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tc = scanner.nextInt();
+        boolean is = true;
+        while(is){
+            int n = scanner.nextInt();
+            int d = scanner.nextInt();
+
+            ArrayList<Integer> nums = new ArrayList<>();
+            for (int i = 0; i < n; i++) {
+                int in; in = scanner.nextInt();
+                nums.add(in);
+            }
+            Collections.sort(nums);
+            if((nums.get(nums.size()-1) <= d) || (nums.get(0)+nums.get(1) <= d)){
+                System.out.println("YES");
+            } else{
+                System.out.println("NO");
+            }
+            tc--;
+            if(tc == 0)is=false;
+        }
+    }
+}
