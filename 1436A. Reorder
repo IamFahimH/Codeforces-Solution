@@ -1,0 +1,25 @@
+//https://codeforces.com/problemset/problem/1436/A
+
+package myPackage;
+
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        int tc = scanner.nextInt();
+        while(true){
+            int n = scanner.nextInt();
+            int m = scanner.nextInt();
+            int sum = 0;
+            for (int i = 0; i < n; i++) {
+                int input = scanner.nextInt();
+                sum += input;
+            }
+            if(sum == m) System.out.println("YES");
+            else System.out.println("NO");
+            tc--;
+            if(tc==0)break;
+        }
+    }
+}
