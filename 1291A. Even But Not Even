@@ -1,0 +1,31 @@
+//https://codeforces.com/problemset/problem/1291/A
+
+package myPackage;
+
+import java.util.Scanner;
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        int tc = scanner.nextInt();
+
+        while(tc-->0){
+            StringBuilder str = new StringBuilder();
+            int n = scanner.nextInt();
+            String num = scanner.next();
+
+            int cnt = 0;
+            for (int i = 0; i < n; i++) {
+                int extractedDigit = num.charAt(i) - '0';
+                if(extractedDigit % 2 != 0){
+                    cnt++;
+                    str.append(extractedDigit);
+                    if(cnt == 2)break;
+                }
+
+            }
+            if(cnt == 2) System.out.println(str);
+            else System.out.println(-1);
+        }
+    }
+}
