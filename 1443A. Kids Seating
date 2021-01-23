@@ -1,0 +1,37 @@
+//https://codeforces.com/contest/1443/problem/A
+// c++ and java solution
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int tc; cin>>tc;
+    while(tc--){
+        int n; cin>>n;
+        int numsOfChairs = 4*n;
+        for(int i=1; i<=n; i++){
+            cout<<numsOfChairs-2*i<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+
+
+package myPackage;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tc = scanner.nextInt();
+        while(tc-->0){
+            int n = scanner.nextInt();
+            int numOfChairs = 4*n;
+            for (int i = 1; i <= n; i++) {
+                System.out.print(numOfChairs - (2*i) + " ");
+            }
+            System.out.println("\n");
+        }
+    }
+}
