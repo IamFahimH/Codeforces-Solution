@@ -1,0 +1,90 @@
+//https://codeforces.com/problemset/problem/1443/B
+// c++ solution & java solution
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() {
+    int tc; cin>>tc;
+    while(tc--){
+        int a,b; cin>>a>>b;
+        string line; cin>>line;
+
+        int first = -1, last = -1;
+        for(int i=0; i<line.length(); i++){
+            if(line[i] == '1'){
+                first = i; break;
+            }
+        }
+        for(int i=line.length()-1; i>=0; i--){
+            if(line[i] == '1'){
+                last = i; break;
+            }
+        }
+
+        int ans = a;
+        if((first == last) && (first == -1))cout<<0<<endl;
+        else{
+           for(int i=first; i<=last; i++){
+            int numOfZeros = 0;
+            if(line[i] == '0'){
+                while(line[i] == '0'){
+                numOfZeros++;
+                i++;
+                }
+            ans += min(a,b*numOfZeros);
+            }
+        }
+        cout<<ans<<endl;
+        }
+    }
+    return 0;
+}
+
+
+package myPackage;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int tc = scanner.nextInt();
+        while(tc-->0){
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            String buildings = scanner.next();
+
+
+            int first = -1, last = -1;
+            for (int i = 0; i < buildings.length(); i++) {
+                if(buildings.charAt(i) == '1'){
+                    first = i;
+                    break;
+                }
+            }
+            for (int i = buildings.length()-1; i >= 0 ; i--) {
+                if(buildings.charAt(i) == '1'){
+                    last = i;
+                    break;
+                }
+            }
+            int ans = a; int d=0;
+            if(first == last && first == -1){
+                System.out.println(0);
+                //System.out.println("Inside if statement");
+            } else{
+                for (int i = first; i <= last; i++) {
+                    int numOfZeros = 0;
+                    if(buildings.charAt(i) == '0') {
+                        while (buildings.charAt(i) == '0') {
+                            i++;
+                            numOfZeros++;
+                        }
+                        ans += Math.min(a,b*numOfZeros);
+                    }
+                }
+                System.out.println(ans);
+            }
+        }
+    }
+}
