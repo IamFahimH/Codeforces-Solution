@@ -1,0 +1,41 @@
+#include <bits/stdc++.h>
+#include <vector>
+using namespace std;
+
+int main(){
+    int n; cin>>n;
+    vector <int> vec;
+    for(int i=0; i<n; i++){
+        int in; cin>>in;
+        vec.push_back(in);
+    }
+    //sort(vec.begin(),vec.end());
+    int sereja = 0, dima = 0;
+    int i=1;
+    while(!vec.empty()){
+        if(i%2 == 1){
+            if(vec.front() > vec.back()){
+                sereja += vec.front();
+                vec.erase(vec.begin());
+            }
+            else{
+                 sereja += vec.back();
+                 vec.pop_back();
+            }
+        }
+        if(i%2 == 0){
+            if(vec.front() > vec.back()){
+                dima += vec.front();
+                vec.erase(vec.begin());
+            }
+            else{
+                 dima += vec.back();
+                 vec.pop_back();
+            }
+        }
+
+        i++;
+    }
+    cout<<sereja<<" "<<dima<<endl;
+    return 0;
+}
