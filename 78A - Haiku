@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+#include <vector>
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+typedef long long ll;
+using namespace std;
+
+bool isVowel(char i){
+    return (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u');
+}
+
+int main(){
+    optimize();
+    vector <string> vec;
+    for(int i=0; i<3; i++){
+        string line; getline(cin, line);
+        vec.push_back(line);
+    }
+
+    int v[] = {5,7,5};
+    for(int i=0; i<3; i++){
+        int cnt = 0;
+        for(auto u:vec[i]){
+            if(isVowel(u))cnt++;
+        }
+        if(cnt != v[i])return cout<<"NO"<<endl, 0;
+    }
+    cout<<"YES"<<endl;
+    return 0;
+}
