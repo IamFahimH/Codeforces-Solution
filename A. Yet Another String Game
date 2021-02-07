@@ -1,0 +1,36 @@
+//https://codeforces.com/contest/1480/problem/A
+
+#include <iostream>
+#include <vector>
+#include <bits/stdc++.h>
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+typedef long long ll;
+using namespace std;
+
+int main()
+{
+    optimize();
+    int tc; cin>>tc;
+    while(tc--){
+        string line; cin>>line;
+        int len = line.size();
+        for(int i=1; i<=len; i++){
+            if(i%2 == 1){
+                char c = line[i-1];
+                if(c != 'a') line[i-1] = 'a';
+                else{
+                    c++;
+                    line[i-1] = c;
+                }
+
+            }
+            else{
+                char c = line[i-1];
+                if(c != 'z') line[i-1]='z';
+                else line[i-1]='y';
+            }
+        }
+        cout<<line<<endl;
+    }
+    return 0;
+}
