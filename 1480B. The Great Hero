@@ -1,0 +1,43 @@
+//https://codeforces.com/contest/1480/problem/B
+
+#include <bits/stdc++.h>
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+typedef long long ll;
+using namespace std;
+
+void solve(){
+        ll power, health, n; cin>>power>>health>>n;
+        vector < pair<ll,ll> > vec(n);
+
+        for(ll i=0; i<n; i++)cin>>vec[i].first;
+        for(ll i=0; i<n; i++)cin>>vec[i].second;
+        sort(vec.begin(),vec.end());
+
+        bool is = false;
+        for(ll i=0; i<n; i++){
+            if(health < 1){cout<<"NO"<<endl; return;}
+
+            ll hround = (vec[i].second / power);
+            ll mround = (health/vec[i].first);
+
+            if((vec[i].second % power) > 0)hround++;
+            if((health % vec[i].first) > 0)mround++;
+
+            ll round = min(hround, mround);
+
+            health -= (round*vec[i].first);
+            vec[i].second -= (round*power);
+        }
+        if(vec[n-1].second > 0)cout<<"NO"<<endl;
+        else cout<<"YES"<<endl;
+}
+
+int main()
+{
+    optimize();
+    ll tc; cin>>tc;
+    while(tc--){
+        solve();
+    }
+    return 0;
+}
