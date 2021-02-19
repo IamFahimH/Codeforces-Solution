@@ -1,0 +1,39 @@
+//https://codeforces.com/problemset/problem/1042/D
+
+#include <bits/stdc++.h>
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define endl '\n'
+using namespace std;
+
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+
+
+const int mx = 2e5+50;
+ll sum[mx];
+
+int main(){
+    optimize();
+    ll n,t; cin>>n>>t;
+    for(ll i=1; i<=n; i++){
+        ll in; cin>>in;
+        sum[i] = sum[i-1] + in;
+    }
+
+    ordered_set ps;
+    ps.insert(0);
+
+    map <ll,ll> cnt;
+    cnt[0]++;
+
+    ll ans = 0;
+    for(ll i=1; i<=n; i++){
+        ans += (i - ps.order_of_key(sum[i]-t) - cnt[sum[i]-t]);
+        ps.insert(sum[i]);
+        cnt[sum[i]]++;
+    }
+    cout<<ans<<endl;
+    return 0;
+}
