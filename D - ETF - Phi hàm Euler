@@ -1,0 +1,73 @@
+//https://codeforces.com/group/FLVn1Sc504/contest/274491/problem/D
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+#define MOD 1e9+7
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+/// cout<<*X.find_by_order(1)<<endl; // finds the kth element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+const int MX = 1e7+123;
+bitset <MX> isPrime;
+vector <int> primes;
+
+void sieve(int n){
+    n += 10;
+    for(int i=3; i<=n; i+=2 )isPrime[i] = 1;
+    isPrime[2] = 1;
+
+    int lim = sqrt(n);
+    for (int i=3; i<=lim; i+=2){
+        if(isPrime[i] == 1){
+            for(int j=i*i; j<=n; j+=(i + i)){
+                isPrime[j] = 0;
+            }
+        }
+    }
+
+
+    primes.push_back(2);
+    for(int i=3; i<=n; i+=2){
+        if(isPrime[i] == 1 )primes.push_back(i);
+    }
+}
+
+int phi(int n){
+    int ans = n;
+    for(auto p:primes){
+        if(1LL*p*p > n || n == 0)break;
+
+        if(n%p == 0){
+            ans /= p;
+            ans *= (p-1);
+            while(n%p == 0){
+                n /= p;
+            }
+        }
+    }
+    if(n>1){
+        ans /= n;
+        ans *= (n-1);
+    }
+    return ans;
+}
+
+int main(){
+    optimize();
+    sieve(1e3);
+
+    int t; cin>>t;
+    while(t--){
+        int n; cin>>n;
+        cout<<phi(n)<<endl;
+    }
+
+    return 0;
+}
