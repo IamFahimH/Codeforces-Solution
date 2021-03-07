@@ -1,0 +1,30 @@
+//https://codeforces.com/problemset/problem/1463/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+#define MOD 1e9+7
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+/// cout<<*X.find_by_order(1)<<endl; // finds the kth element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+int main(){
+    optimize();
+
+    int t; cin>>t;
+    while(t--){
+        int a,b,c; cin>>a>>b>>c;
+        int sum = a+b+c;
+        int temp = sum/9;
+
+        if(sum%9 == 0 && (temp <= a && temp <= b && temp <= c))cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+    return 0;
+}
