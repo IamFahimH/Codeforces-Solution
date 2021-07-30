@@ -18,7 +18,7 @@ typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_
 const int mx = 1e5+123;
 bool vis[mx];
 vector <int> adj[mx];
-int catVer[mx];
+bool catVer[mx];
 int ans, m;
 
 void dfs(int u, int sum){
@@ -26,7 +26,7 @@ void dfs(int u, int sum){
 
     vis[u] =  1;
 
-    if(catVer[u] == 1)sum++;
+    if(catVer[u])sum++;
     else sum = 0;
 
     if(sum > m)return;
@@ -61,5 +61,6 @@ int main()
     dfs(1, 0);
 
     cout<<ans<<endl;
+    
     return 0;
 }
