@@ -1,0 +1,42 @@
+//https://codeforces.com/problemset/problem/1606/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+#define MOD 1e9+7
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+/// cout<<*X.find_by_order(1)<<endl; // finds the kth element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+int dx[] = {0, 0, +1, -1, +1, +1, -1, -1};
+int dy[] = {+1, -1, 0, 0, +1, -1, +1, -1};
+
+const int mx = 1e5+5;
+int a[mx][4], n;
+int dp[mx][4];
+
+
+int main()
+{
+    optimize();
+
+    int tc; cin>>tc;
+    for(int t=0; t<tc; t++){
+
+        string s; cin>>s;
+        int len = s.size();
+
+        if(s[0] != s[len-1])s[len-1] = s[0];
+
+        cout<<s<<endl;
+    }
+
+
+    return 0;
+}
