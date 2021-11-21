@@ -1,0 +1,59 @@
+//https://codeforces.com/contest/1380/problem/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+#define MOD 1e9+7
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+/// cout<<*X.find_by_order(1)<<endl; // finds the kth element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+int dx[] = {0, 0, +1, -1, +1, +1, -1, -1};
+int dy[] = {+1, -1, 0, 0, +1, -1, +1, -1};
+
+const int mx = 1e5+5;
+int a[mx][4], n;
+int dp[mx][4];
+
+
+
+int main()
+{
+    optimize();
+
+    int tc; cin>>tc;
+    for(int t=0; t<tc; t++){
+
+
+        vector <int> vec;
+
+        int n; cin>>n;
+        int nums[n+5];
+
+        for(int i=0; i<n; i++)cin>>nums[i];
+
+        for(int i=1; i<n-1; i++){
+
+
+
+            if((nums[i] > nums[i-1] && (nums[i] > nums[i+1]))){
+                vec.push_back(i);
+                vec.push_back(i+1);
+                vec.push_back(i+2);
+            }
+        }
+        if(!vec.empty()){
+            cout<<"YES"<<endl;
+            cout<<vec[0]<<" "<<vec[1]<<" "<<vec[2]<<endl;
+        }
+        else cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
