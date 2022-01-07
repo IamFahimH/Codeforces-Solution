@@ -1,0 +1,48 @@
+//https://codeforces.com/problemset/problem/1622/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction() cout.unsetf(ios::floatfield); cout.precision(10); cout.setf(ios::fixed,ios::floatfield);
+#define MOD 1e9+7
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+typedef long long int ll;
+typedef tree< ll, null_type, less_equal<ll>, rb_tree_tag, tree_order_statistics_node_update > ordered_set;
+/// cout<<*X.find_by_order(1)<<endl; // finds the kth element
+/// cout<<X.order_of_key(-5)<<endl;  // number of items in a set that are strictly smaller than our item
+
+int dx[] = {0, 0, +1, -1, +1, +1, -1, -1};
+int dy[] = {+1, -1, 0, 0, +1, -1, +1, -1};
+
+const int mx = 1e5+5;
+int a[mx][4], n;
+int dp[mx][4];
+
+
+
+int main()
+{
+    optimize();
+
+    ll tc; cin>>tc;
+
+    for(ll t=0; t<tc; t++){
+        vector <ll> vec;
+
+        for(int i=0; i<3; i++){
+            ll in; cin>>in;
+            vec.push_back(in);
+        }
+
+        sort(vec.begin(), vec.end());
+
+        if((vec[2] == vec[1] && vec[0]%2 == 0)||(vec[0] == vec[1]
+            && vec[2]%2 == 0) || (vec[2] == vec[0] + vec[1]))cout<<"YES"<<endl;
+        else cout<<"NO"<<endl;
+    }
+
+    return 0;
+}
