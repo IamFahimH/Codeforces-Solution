@@ -1,0 +1,40 @@
+//https://codeforces.com/contest/950/problem/A
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+
+
+int main()
+{
+    optimize();
+
+    int l,r,a; cin>>l>>r>>a;
+
+    int sm = min(l,r);
+    int lg = max(l,r);
+
+    int diff = lg - sm;
+
+    if(diff == 0){
+        sm += a/2;
+        lg += a/2;
+    }
+    else{
+        if(a >= diff){
+            sm += diff;
+            a -= diff;
+
+            sm += a/2;
+            lg = a/2;
+        }
+        else sm += a;
+    }
+
+    cout<<sm*2<<endl;
+    return 0;
+}
