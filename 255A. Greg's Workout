@@ -1,0 +1,31 @@
+//https://codeforces.com/contest/255/problem/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+
+
+
+int main()
+{
+    optimize();
+
+    int n; cin>>n;
+
+    int lgC = 0,lgB = 0, lgBc = 0;
+    for(int i=1; i<=n; i++){
+        int in; cin>>in;
+
+        if(i % 3 == 1)lgC += in;
+        else if(i % 3 == 2)lgB += in;
+        else if(i % 3 == 0)lgBc += in;
+    }
+
+    if(lgC > lgB && lgC > lgBc)cout<<"chest"<<endl;
+    else if(lgB > lgC && lgB > lgBc)cout<<"biceps"<<endl;
+    else cout<<"back"<<endl;
+
+    return 0;
+}
