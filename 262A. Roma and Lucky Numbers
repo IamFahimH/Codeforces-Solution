@@ -1,0 +1,36 @@
+//https://codeforces.com/contest/262/problem/A
+
+#include<bits/stdc++.h>
+using namespace std;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction(a) cout.unsetf(ios::floatfield); cout.precision(a); cout.setf(ios::fixed,ios::floatfield);
+typedef long long int ll;
+
+
+
+int main()
+{
+    optimize();
+
+    ll n,k; cin>>n>>k;
+    vector <ll> vec(n);
+
+    int ans = 0;
+    
+    for(ll i=0; i<n; i++){
+        int num; cin>>num;
+        int cnt = 0;
+        while(num){
+            int temp = num % 10;
+            if(temp == 4 || temp == 7)cnt++;
+            num /= 10;
+        }
+        if(cnt <= k)ans++;
+    }
+
+    cout<<ans<<endl;
+
+    return 0;
+}
