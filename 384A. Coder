@@ -1,0 +1,37 @@
+//https://codeforces.com/contest/384/problem/A
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+
+#define endl '\n'
+#define optimize() ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
+#define fraction(a) cout.unsetf(ios::floatfield); cout.precision(a); cout.setf(ios::fixed,ios::floatfield);
+
+
+
+
+int main()
+{
+    optimize();
+
+    int n; cin>>n;
+
+    int ans = 0;
+
+    (n%2 == 0)?ans=(n*n)/2: ans = ((n*n)+1)/2;
+
+    cout<<ans<<endl;
+
+    for(int i=1; i<=n; i++){
+        for(int j=1; j<=n; j++){
+            if(i%2 == j%2)cout<<"C";
+            else cout<<".";
+        }
+        cout<<endl;
+    }
+
+    return 0;
+}
